@@ -4,7 +4,7 @@ import axios from 'axios';
 import { getApiUrl } from '..';
 import { Pagination } from '@/types/common';
 
-const apiUrl = getApiUrl();
+const apiUrl = getApiUrl('live');
 
 export async function fetchApps({ page = 1, pageSize = 25, sort = 'desc' }: Pagination) {
 	const query = qs.stringify(

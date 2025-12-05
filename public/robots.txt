@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://example.tech
+Host: https://donations.slickhive.tech
 
 # Sitemaps
-Sitemap: https://example.tech/sitemap.xml
+Sitemap: https://donations.slickhive.tech/sitemap.xml

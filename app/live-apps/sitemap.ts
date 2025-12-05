@@ -2,7 +2,7 @@
 import { fetchApps } from '@/lib/api/services/apps.service';
 import { MetadataRoute } from 'next';
 
-const liveUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.tech';
+const liveUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://donations.slickhive.tech';
 const LIMIT = 50000; // Google's max limit
 
 // 1️⃣ Dynamically generate the number of sitemaps needed
