@@ -8,6 +8,8 @@ import GlobalPrefetch from '@/lib/api/prefetches';
 import GoogleAnalytics from '@/lib/tracking/GA4';
 import CookieConsent from '@/lib/tracking/CookieConsent';
 import Script from 'next/script';
+import DonationSubmitForm from '@/components/forms/DonationSubmitForm';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -29,9 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body className={inter.className}>
 				<Providers>
 					<Navbar />
-
+					<Toaster />
 					<GlobalPrefetch />
 					{children}
+					<DonationSubmitForm />
 					<Footer />
 
 					{/* Scripts must be in body */}

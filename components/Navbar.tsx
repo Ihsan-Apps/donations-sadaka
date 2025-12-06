@@ -2,7 +2,7 @@ import ThemeController from './ui/ThemeController';
 
 export default function Navbar() {
 	return (
-		<nav className='navbar bg-base-100 text-base-content px-4 shadow-sm shadow-gray-700 dark:shadow-black'>
+		<nav className='navbar px-4 shadow-sm shadow-gray-700 dark:shadow-black'>
 			<div className='flex-none'>
 				<button className='btn btn-square btn-ghost'>
 					<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6'>

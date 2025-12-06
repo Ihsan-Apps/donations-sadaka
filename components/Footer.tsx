@@ -24,7 +24,7 @@ export default function Footer() {
 	return (
 		<footer className='p-4 w-full mt-auto'>
 			<h3 className='font-bold mb-2'>Apps</h3>
-			<ul className='max-w-xl mx-auto text-base-content flex flex-col md:flex-row md:justify-between gap-1'>
+			<ul className='max-w-xl mx-auto  flex flex-col md:flex-row md:justify-between gap-1'>
 				{data?.data?.map((app: any) => (
 					<li key={app.id}>
 						<Link href={`/apps/${app.slug}`}>{app.title}</Link>
