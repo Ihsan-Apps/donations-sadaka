@@ -6,12 +6,13 @@ import Providers from '@/lib/providers';
 import Footer from '@/components/Footer';
 import GlobalPrefetch from '@/lib/api/prefetches';
 import GoogleAnalytics from '@/lib/tracking/GA4';
-import CookieBot from '@/lib/tracking/CookieBot';
+import CookieConsent from '@/lib/tracking/CookieConsent';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Hive Starter',
+	title: 'Donations Links Hub',
 	description: 'This is a Hive starter template.',
 };
 
@@ -21,15 +22,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     we should then deactivate hydration mismatch warnings. */
 		<html lang='en' suppressHydrationWarning>
 			<head>
-				<GoogleAnalytics />
+				{/* Silktide CSS */}
+				<link rel='stylesheet' href='https://consent-manager.net/lib/cookieconsent/css/cookieconsent.min.css' />
 			</head>
-			<body className={inter.className + ' flex  flex-col'}>
+
+			<body className={inter.className}>
 				<Providers>
 					<Navbar />
+
 					<GlobalPrefetch />
 					{children}
 					<Footer />
-					<CookieBot />
+
+					{/* Scripts must be in body */}
+					<GoogleAnalytics />
+
+					{/* Silktide vendor script */}
+					<Script src='https://consent-manager.net/lib/cookieconsent/cookieconsent.min.js' strategy='afterInteractive' />
+
+					{/* CookieConsent config */}
+					<CookieConsent />
 				</Providers>
 			</body>
 		</html>
