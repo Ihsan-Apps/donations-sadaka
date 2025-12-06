@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Providers from '@/lib/providers';
 import Footer from '@/components/Footer';
 import GlobalPrefetch from '@/lib/api/prefetches';
+import GoogleAnalytics from '@/lib/tracking/GA4';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,6 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		/* Both next-themes and our own script will modify the root element in the client,
     we should then deactivate hydration mismatch warnings. */
 		<html lang='en' suppressHydrationWarning>
+			<head>
+				<GoogleAnalytics />
+			</head>
 			<body className={inter.className + ' flex  flex-col'}>
 				<Providers>
 					<Navbar />
