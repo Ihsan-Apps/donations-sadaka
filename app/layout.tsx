@@ -6,6 +6,7 @@ import Providers from '@/lib/providers';
 import Footer from '@/components/Footer';
 import GlobalPrefetch from '@/lib/api/prefetches';
 import GoogleAnalytics from '@/lib/tracking/GA4';
+import CookieBot from '@/lib/tracking/CookieBot';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					<GlobalPrefetch />
 					{children}
 					<Footer />
+					<CookieBot />
 				</Providers>
 			</body>
 		</html>
